@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.model.dto.request.user;
+package com.software.tfs.airopsV1.auth.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -60,4 +60,6 @@ public class RegistrationRequest {
     public void setPasswordPlainText(String passwordPlainText) {
         this.passwordPlainText = passwordPlainText;
     }
+
+
 }

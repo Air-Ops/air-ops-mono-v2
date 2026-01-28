@@ -1,6 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.model.dto.response.user;
-
-import com.software.teamfive.jcc_product_inventory_management.model.biz.User;
+package com.software.tfs.airopsV1.auth.dto.response;
 
 import java.util.UUID;
 

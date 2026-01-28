@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.model.dto.request.user;
+package com.software.tfs.airopsV1.auth.dto.request;
 
 public class LoginRequest {
 

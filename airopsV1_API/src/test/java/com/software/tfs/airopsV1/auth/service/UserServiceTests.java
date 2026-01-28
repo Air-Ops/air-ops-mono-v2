@@ -1,4 +1,4 @@
-package com.software.tfs.airopsV1;
+package com.software.tfs.airopsV1.auth.service;
 
 import com.software.tfs.airopsV1.auth.dto.request.LoginRequest;
 import com.software.tfs.airopsV1.auth.dto.request.RegistrationRequest;
@@ -8,9 +8,6 @@ import com.software.tfs.airopsV1.auth.exception.InsufficientPermissionsException
 import com.software.tfs.airopsV1.auth.exception.UserAlreadyExistsException;
 import com.software.tfs.airopsV1.auth.model.*;
 import com.software.tfs.airopsV1.auth.repo.*;
-import com.software.tfs.airopsV1.auth.service.JwtService;
-import com.software.tfs.airopsV1.auth.service.PermissionValidatorService;
-import com.software.tfs.airopsV1.auth.service.UserService;
 import com.software.tfs.airopsV1.auth.util.PermissionKeys;
 import org.aspectj.lang.annotation.Before;
 import org.json.JSONException;

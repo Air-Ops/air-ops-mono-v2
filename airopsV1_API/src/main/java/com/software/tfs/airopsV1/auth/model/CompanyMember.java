@@ -1,7 +1,5 @@
-package com.software.teamfive.jcc_product_inventory_management.model.join;
+package com.software.tfs.airopsV1.auth.model;
 
-import com.software.teamfive.jcc_product_inventory_management.model.biz.Company;
-import com.software.teamfive.jcc_product_inventory_management.model.biz.User;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/2bc4cb69-b048-4d17-852f-28a0382ab489/console.sql" value="2bc4cb69-b048-4d17-852f-28a0382ab489" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/2bc4cb69-b048-4d17-852f-28a0382ab489/console_1.sql" value="2bc4cb69-b048-4d17-852f-28a0382ab489" />
+    <file url="file://$PROJECT_DIR$/CreatePermission.sql" value="2bc4cb69-b048-4d17-852f-28a0382ab489" />
+    <file url="file://$PROJECT_DIR$/UserPerms_ByCompany.sql" value="2bc4cb69-b048-4d17-852f-28a0382ab489" />
+    <file url="file://$PROJECT_DIR$/permission_creation/create_logon_perm.sql" value="2bc4cb69-b048-4d17-852f-28a0382ab489" />
+  </component>
+</project>

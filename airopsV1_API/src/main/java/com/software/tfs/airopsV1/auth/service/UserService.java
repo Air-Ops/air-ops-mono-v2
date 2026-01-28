@@ -1,24 +1,15 @@
-package com.software.teamfive.jcc_product_inventory_management.service;
+package com.software.tfs.airopsV1.auth.service;
 
-import com.software.teamfive.jcc_product_inventory_management.model.biz.Company;
-import com.software.teamfive.jcc_product_inventory_management.model.biz.Role;
-import com.software.teamfive.jcc_product_inventory_management.model.biz.User;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.request.user.LoginRequest;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.request.user.RegistrationRequest;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.response.role.RoleResponse;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.response.user.LoginResponse;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.response.user.RegistrationResponse;
-import com.software.teamfive.jcc_product_inventory_management.model.join.CompanyMember;
-import com.software.teamfive.jcc_product_inventory_management.model.join.UserRole;
-import com.software.teamfive.jcc_product_inventory_management.repo.biz.CompanyRepository;
-import com.software.teamfive.jcc_product_inventory_management.repo.biz.RoleRepository;
-import com.software.teamfive.jcc_product_inventory_management.repo.biz.UserRepository;
-import com.software.teamfive.jcc_product_inventory_management.repo.join.CompanyMemberRepository;
-import com.software.teamfive.jcc_product_inventory_management.repo.join.UserRoleRepository;
-import com.software.teamfive.jcc_product_inventory_management.security.Security;
-import com.software.teamfive.jcc_product_inventory_management.utility.config.PermissionKeys;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.permission.InsufficientPermissionsException;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.user.UserAlreadyExistsException;
+import com.software.tfs.airopsV1.auth.dto.request.LoginRequest;
+import com.software.tfs.airopsV1.auth.dto.request.RegistrationRequest;
+import com.software.tfs.airopsV1.auth.dto.response.LoginResponse;
+import com.software.tfs.airopsV1.auth.dto.response.RegistrationResponse;
+import com.software.tfs.airopsV1.auth.dto.response.RoleResponse;
+import com.software.tfs.airopsV1.auth.exception.InsufficientPermissionsException;
+import com.software.tfs.airopsV1.auth.exception.UserAlreadyExistsException;
+import com.software.tfs.airopsV1.auth.model.*;
+import com.software.tfs.airopsV1.auth.repo.*;
+import com.software.tfs.airopsV1.config.Security;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -33,6 +24,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+import static com.software.tfs.airopsV1.auth.util.PermissionKeys.*;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -137,7 +130,7 @@ public class UserService implements UserDetailsService {
     }
 
     public LoginResponse login(LoginRequest loginRequest) {
-        Authentication authentication = authenticationManager.authenticate(
+        authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         loginRequest.getEmail(),
                         loginRequest.getPassword()
@@ -154,8 +147,8 @@ public class UserService implements UserDetailsService {
         CompanyMember companyMember = companyMemberRepository.findByUserId(user.getId())
                 .orElseThrow(() -> new RuntimeException("User is not associated with a company"));
 
-        if(!this.permissionValidatorService.doesUserHavePerm(companyMember, PermissionKeys.LOGON)) {
-            throw new InsufficientPermissionsException(user.getId(), PermissionKeys.LOGON);
+        if(!this.permissionValidatorService.doesUserHavePerm(companyMember, LOGON)) {
+            throw new InsufficientPermissionsException(user.getId(), LOGON);
         }
 
         List<RoleResponse> roles = userRoleRepository.findByMemberId(companyMember.getId())

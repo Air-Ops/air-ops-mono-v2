@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.model.enums;
+package com.software.tfs.airopsV1.auth.util;
 
 public enum CompanyStatus {
     ACTIVE, ARCHIVED, DELETED

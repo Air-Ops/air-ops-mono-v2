@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.model.biz;
+package com.software.tfs.airopsV1.auth.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

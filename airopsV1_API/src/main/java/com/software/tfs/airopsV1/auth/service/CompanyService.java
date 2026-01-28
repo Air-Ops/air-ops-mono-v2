@@ -1,6 +1,6 @@
-package com.software.teamfive.jcc_product_inventory_management.service;
+package com.software.tfs.airopsV1.auth.service;
 
-import com.software.teamfive.jcc_product_inventory_management.repo.biz.CompanyRepository;
+import com.software.tfs.airopsV1.auth.repo.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

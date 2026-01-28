@@ -1,9 +1,9 @@
-package com.software.teamfive.jcc_product_inventory_management.service;
+package com.software.tfs.airopsV1.auth.service;
 
-import com.software.teamfive.jcc_product_inventory_management.model.biz.Company;
-import com.software.teamfive.jcc_product_inventory_management.model.biz.User;
-import com.software.teamfive.jcc_product_inventory_management.model.join.CompanyMember;
-import com.software.teamfive.jcc_product_inventory_management.repo.join.CompanyMemberRepository;
+import com.software.tfs.airopsV1.auth.model.Company;
+import com.software.tfs.airopsV1.auth.model.CompanyMember;
+import com.software.tfs.airopsV1.auth.model.User;
+import com.software.tfs.airopsV1.auth.repo.CompanyMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.software.teamfive.jcc_product_inventory_management.utility.exception.permission;
+package com.software.tfs.airopsV1.auth.exception;
 
-import com.software.teamfive.jcc_product_inventory_management.utility.config.PermissionKeys;
+import com.software.tfs.airopsV1.auth.util.PermissionKeys;
 
 import java.util.UUID;
 

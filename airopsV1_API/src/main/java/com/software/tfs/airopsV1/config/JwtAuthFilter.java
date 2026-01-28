@@ -1,7 +1,7 @@
-package com.software.teamfive.jcc_product_inventory_management.config;
+package com.software.tfs.airopsV1.config;
 
-import com.software.teamfive.jcc_product_inventory_management.service.JwtService;
-import com.software.teamfive.jcc_product_inventory_management.service.UserService;
+import com.software.tfs.airopsV1.auth.service.JwtService;
+import com.software.tfs.airopsV1.auth.service.UserService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +11,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;

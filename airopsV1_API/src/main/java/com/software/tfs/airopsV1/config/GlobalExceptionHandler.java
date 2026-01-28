@@ -1,15 +1,10 @@
-package com.software.teamfive.jcc_product_inventory_management.config;
+package com.software.tfs.airopsV1.config;
 
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.company.CompanyNotFoundException;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.join.UserNotInCompanyException;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.permission.InsufficientPermissionsException;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.product.ProductAlreadyExistsException;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.user.UserAlreadyExistsException;
-import com.software.teamfive.jcc_product_inventory_management.utility.exception.user.UserNotFoundException;
-
+import com.software.tfs.airopsV1.auth.exception.*;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,11 +16,9 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(ProductAlreadyExistsException.class)
-    public ResponseEntity<?> handleDuplicateProduct(ProductAlreadyExistsException ex) {
-        return ResponseEntity
-                .status(HttpStatus.CONFLICT)
-                .body(ex.getMessage());
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<?> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
 
     @ExceptionHandler(UserAlreadyExistsException.class)

@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.utility.config;
+package com.software.tfs.airopsV1.auth.util;
 
 /**
  * Represents the permission keys in the System.

@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.utility.exception.user;
+package com.software.tfs.airopsV1.auth.exception;
 
 import java.util.UUID;
 

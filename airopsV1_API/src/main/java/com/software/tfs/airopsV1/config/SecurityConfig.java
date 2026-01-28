@@ -1,7 +1,7 @@
-package com.software.teamfive.jcc_product_inventory_management.config;
+package com.software.tfs.airopsV1.config;
 
-import com.software.teamfive.jcc_product_inventory_management.service.JwtService;
-import com.software.teamfive.jcc_product_inventory_management.service.UserService;
+import com.software.tfs.airopsV1.auth.service.JwtService;
+import com.software.tfs.airopsV1.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -58,8 +58,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/jcc/api/auth/register").permitAll()
-                        .requestMatchers("/jcc/api/auth/login").permitAll()
+                        .requestMatchers("/ao/api/auth/register").permitAll()
+                        .requestMatchers("/ao/api/auth/login").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

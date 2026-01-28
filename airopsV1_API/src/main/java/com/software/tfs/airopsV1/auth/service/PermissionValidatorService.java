@@ -1,13 +1,13 @@
-package com.software.teamfive.jcc_product_inventory_management.service;
+package com.software.tfs.airopsV1.auth.service;
 
-import com.software.teamfive.jcc_product_inventory_management.model.biz.Permission;
-import com.software.teamfive.jcc_product_inventory_management.model.join.CompanyMember;
-import com.software.teamfive.jcc_product_inventory_management.model.join.RolePermission;
-import com.software.teamfive.jcc_product_inventory_management.model.join.UserRole;
-import com.software.teamfive.jcc_product_inventory_management.repo.biz.PermissionRepository;
-import com.software.teamfive.jcc_product_inventory_management.repo.join.RolePermissionRepository;
-import com.software.teamfive.jcc_product_inventory_management.repo.join.UserRoleRepository;
-import com.software.teamfive.jcc_product_inventory_management.utility.config.PermissionKeys;
+import com.software.tfs.airopsV1.auth.model.CompanyMember;
+import com.software.tfs.airopsV1.auth.model.Permission;
+import com.software.tfs.airopsV1.auth.model.RolePermission;
+import com.software.tfs.airopsV1.auth.model.UserRole;
+import com.software.tfs.airopsV1.auth.repo.PermissionRepository;
+import com.software.tfs.airopsV1.auth.repo.RolePermissionRepository;
+import com.software.tfs.airopsV1.auth.repo.UserRoleRepository;
+import com.software.tfs.airopsV1.auth.util.PermissionKeys;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

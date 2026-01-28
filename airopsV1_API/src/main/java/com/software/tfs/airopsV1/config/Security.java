@@ -1,4 +1,4 @@
-package com.software.teamfive.jcc_product_inventory_management.security;
+package com.software.tfs.airopsV1.config;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;

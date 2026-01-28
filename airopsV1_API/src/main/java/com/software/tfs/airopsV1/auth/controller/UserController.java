@@ -1,19 +1,20 @@
-package com.software.teamfive.jcc_product_inventory_management.controller;
+package com.software.tfs.airopsV1.auth.controller;
 
-import com.software.teamfive.jcc_product_inventory_management.model.dto.request.user.LoginRequest;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.request.user.RegistrationRequest;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.response.user.LoginResponse;
-import com.software.teamfive.jcc_product_inventory_management.model.dto.response.user.RegistrationResponse;
-import com.software.teamfive.jcc_product_inventory_management.repo.biz.UserRepository;
-import com.software.teamfive.jcc_product_inventory_management.service.JwtService;
-import com.software.teamfive.jcc_product_inventory_management.service.UserService;
+import com.software.tfs.airopsV1.auth.dto.request.LoginRequest;
+import com.software.tfs.airopsV1.auth.dto.request.RegistrationRequest;
+import com.software.tfs.airopsV1.auth.dto.response.LoginResponse;
+import com.software.tfs.airopsV1.auth.dto.response.RegistrationResponse;
+import com.software.tfs.airopsV1.auth.repo.UserRepository;
+import com.software.tfs.airopsV1.auth.service.JwtService;
+import com.software.tfs.airopsV1.auth.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.jackson.autoconfigure.JacksonProperties;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/jcc/api/auth")
+@RequestMapping("/ao/api/auth")
 public class UserController {
 
     @Autowired
@@ -47,6 +48,10 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegistrationRequest request) {
+        if (request.getEmail() == null || request.getEmail().isEmpty()) {
+            return ResponseEntity.badRequest().body("Email is required");
+        }
+
         RegistrationResponse result = this.userService.register(request);
         return ResponseEntity.ok(result);
     }
